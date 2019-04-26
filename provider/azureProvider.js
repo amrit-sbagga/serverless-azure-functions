@@ -503,12 +503,12 @@ class AzureProvider {
   cleanUpFunctionsBeforeDeploy (serverlessFunctions) {
     const deleteFunctionPromises = [];
 
-    deployedFunctionNames.forEach((functionName) => {
+   /* deployedFunctionNames.forEach((functionName) => {
       if (serverlessFunctions.indexOf(functionName) < 0) {
         this.serverless.cli.log(`Deleting function : ${functionName}`);
         deleteFunctionPromises.push(this.deleteFunction(functionName));
       }
-    });
+    }); */
 
     return BbPromise.all(deleteFunctionPromises);
   }
